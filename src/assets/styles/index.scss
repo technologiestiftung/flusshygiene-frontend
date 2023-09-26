@@ -135,7 +135,7 @@ $mapHeight: 400px;
   width: 100%;
   height: $mapHeight;
 }
-@import "~mapbox-gl/dist/mapbox-gl.css";
+
 #map__container > * {
   position: absolute;
   top: 0;
