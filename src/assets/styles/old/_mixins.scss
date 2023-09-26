@@ -1,5 +1,0 @@
-@import "./variables.scss";
-
-@mixin placeholderBackgroundImage($size) {
-  background: url($placeholder-url+"/"+$size) no-repeat top left;
-}
