@@ -19,7 +19,6 @@ jobs:
           node-version-file: ".nvmrc"
       - run: npm ci
       - run: npm run build --if-present
-      - run: docker build -t technologiestiftung/flusshygiene-frontend .
   release:
     name: semantic-release
     needs: [build]
