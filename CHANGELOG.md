@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/technologiestiftung/flusshygiene-frontend/compare/v1.0.0...v1.1.0) (2023-09-27)
+
+
+### Features
+
+* **docker:** Setup docker and build ([94e1727](https://github.com/technologiestiftung/flusshygiene-frontend/commit/94e17272b43456815938fa8a1443a6c7aa7009d1))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
