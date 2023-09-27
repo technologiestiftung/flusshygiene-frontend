@@ -34,6 +34,7 @@ jobs:
           # clean out deps so semantic-release doesn't fail
           npm ls --depth=0 | grep -vE '^(npm|├──)' | awk -F@ '{print $1}' | xargs npm rm --save
           npm ls --depth=0 --dev | grep -vE '^(npm|├──)' | awk -F@ '{print $1}' | xargs npm rm --save-dev
+          rm package-lock.json
           npm i semantic-release @technologiestiftung/semantic-release-config -D
           npx semantic-release --ci
         env:
