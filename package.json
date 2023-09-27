@@ -77,40 +77,5 @@
   },
   "resolutions": {
     "react-helmet/react-side-effect": "2.1.0"
-  },
-  "jest": {
-    "coverageReporters": [
-      "lcov",
-      "text"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 80,
-        "functions": 80,
-        "lines": 80,
-        "statements": -10
-      }
-    },
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!<rootDir>/node_modules/",
-      "!<rootDir>/__test-utils",
-      "!**/coverage/**",
-      "!src/setup/**",
-      "!src/react-auth0-wrapper.tsx",
-      "!src/serviceWorker.ts",
-      "!src/stories/**"
-    ]
-  },
-  "proxy": "http://localhost:5004",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run add:version && npm run lint-staged"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
