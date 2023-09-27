@@ -1,7 +1,5 @@
 import React from "react";
 import { Container } from "./Container";
-import { HelpDesk } from "./HelpDesk";
-// import { Auth0Context } from "../lib/auth/react-auth0-wrapper";
 import {
   ProvideCombindeContext,
   CombinedContext,
@@ -40,10 +38,6 @@ export default class ErrorBoundary extends React.Component<
     console.error(error, errorInfo);
   }
   render() {
-    const { isAuthenticated } = this.context.authContext;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { spot } = this.context.helpDeskContext;
-
     if (this.state.hasError) {
       // You can render any custom fallback UI
       return (
@@ -59,32 +53,16 @@ export default class ErrorBoundary extends React.Component<
               </div>
             </Container>
             <Container columnClassName="is-8">
-              {isAuthenticated === true ? (
-                <HelpDesk
-                  hdData={{
-                    error: this.state.error ? this.state.error : undefined,
-                    componentStack: this.state.errorInfo
-                      ? this.state.errorInfo?.componentStack
-                      : this.state.errorInfo,
-                  }}
-                ></HelpDesk>
-              ) : (
-                <>
-                  <h2 className="is-2 is-title">Error Stack</h2>
-                  <pre>
-                    <code>
-                      {this.state.errorInfo &&
-                        this.state.errorInfo.componentStack}
-                    </code>
-                  </pre>
-                  <h2 className="is-2 is-title">Error</h2>
-                  <pre>
-                    <code>
-                      {this.state.error && this.state.error.toString()}
-                    </code>
-                  </pre>
-                </>
-              )}
+              <h2 className="is-2 is-title">Error Stack</h2>
+              <pre>
+                <code>
+                  {this.state.errorInfo && this.state.errorInfo.componentStack}
+                </code>
+              </pre>
+              <h2 className="is-2 is-title">Error</h2>
+              <pre>
+                <code>{this.state.error && this.state.error.toString()}</code>
+              </pre>
             </Container>
             <Container columnClassName="is-8">
               <div className="content">

@@ -1,14 +1,14 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const helmet = require('helmet');
-const cors = require('cors');
-const path = require('path');
-const PORT = process.env.PORT;
+const helmet = require("helmet");
+const cors = require("cors");
+const path = require("path");
+const PORT = process.env.PORT || 8080;
 app.use(helmet());
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'build')));
-app.use('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.use(express.static(path.resolve(__dirname, "../build")));
+app.use("/*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../build", "index.html"));
 });
 // catch all
 //app.get("*", (req, res) => {
@@ -16,7 +16,7 @@ app.use('/*', (req, res) => {
 //});
 
 app.listen(PORT, () => {
-  if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV === "development") {
     process.stdout.write(`listening on http://localhost:${PORT}\n`);
   }
 });
