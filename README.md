@@ -6,64 +6,49 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-# {repo-template}
+# Flusshygiene Frontend
 
-## TODO (after you generated the repo)
-
-- [ ] Review the content of the README.md and adjust to your liking
-- [ ] Read the README.md till the end and adjust the content licensing,
-      logos, etc (I know you stopped at tbd...)
-- [ ] Adjust the file [.github/CODEOWNERS](./.github/CODEOWNERS)
-- [ ] Adjust the files under [.github/ISSUE_TEMPLATE](./.github/ISSUE_TEMPLATE)
-- [ ] If you use staging and main branches use this template for [.github/renovate.json](./.github/renovate.json)
-
-```json
-{
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>technologiestiftung/renovate-config"],
-	"baseBranches": ["staging"]
-}
-```
-
-- [ ] Do you want to honor all kinds of contributions? Use [all-contributors](https://allcontributors.org/)
-
-```bash
-npx all-contributors-cli check
-npx all-contributors-cli add ff6347 doc
-```
-
-You can use it on GitHub just by commenting on PRs and issues:
-
-```plain
-@all-contributors please add @ff6347 for infrastructure, tests and code
-```
-
-- [ ] Add your project description
-- [ ] Get fancy shields at https://shields.io
+This legacy application is the extracted "Standortbewertung" tool from the [Flusshygiene](https://github.com/technologiestiftung/flusshygiene) project, which will not be developed anymore. There is another iteration by the [KWB](https://github.com/KWB-R/swim-ai).
 
 ## Prerequisites
 
-tbd...
+- Node.js v12 installed via https://nvm.sh
+- (optional) Docker
 
 ## Installation
 
-tbd...
+```bash
+# install and use the used Node.js version referenced in .nvmrc
+nvm install
+# install the application dependencies
+npm ci
+# build the production bundle
+npm run build
+# install the server dependencies
+#(this is optional, you could use Nginx, Apache or any other webserver)
+cd ./server && npm ci && cd ..
+# serve the application
+node server/index.js
+```
 
 ## Usage or Deployment
 
-tbd...
+As seen above you can use the small express server delivered with the application.
+There is also an docker image under https://hub.docker.com/repository/docker/technologiestiftung/flusshygiene-frontend
 
 ## Development
 
-tbd...
+```bash
+npm run dev
+```
 
 ## Tests
 
-tbd...
+None. Sorry.
 
 ## Contributing
 
-Before you create a pull request, write an issue so we can discuss your changes.
+Thank you for considering to contribute. Before you create a pull request, write an issue so we can discuss your changes.
 
 ## Contributors
 
@@ -87,8 +72,6 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 ## Content Licensing
 
 Texts and content available as [CC BY](https://creativecommons.org/licenses/by/3.0/de/).
-
-Illustrations by {MARIA_MUSTERFRAU}, all rights reserved.
 
 ## Credits
 
@@ -119,3 +102,5 @@ Illustrations by {MARIA_MUSTERFRAU}, all rights reserved.
 </table>
 
 ## Related Projects
+
+- https://github.com/technologiestiftung/flusshygiene
