@@ -32,8 +32,7 @@ jobs:
           node-version: 20
       - run: |
           # clean out deps so semantic-release doesn't fail
-          npm ls --depth=0 | grep -vE '^(npm|├──)' | awk -F@ '{print $1}' | xargs npm rm --save
-          npm ls --depth=0 --dev | grep -vE '^(npm|├──)' | awk -F@ '{print $1}' | xargs npm rm --save-dev
+          jq -c '{ name, version }' package.json | sponge package.json
           rm package-lock.json
           npm i semantic-release @technologiestiftung/semantic-release-config -D
           npx semantic-release --ci
