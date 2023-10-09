@@ -1,4 +1,4 @@
-FROM node:12.18.4-buster-slim as builder
+FROM node:12.22.12-buster-slim as builder
 LABEL maintainer="Fabian Morón Zirfas"
 # LABEL version="1.0.0"
 LABEL description="A frontend for a the project flusshygiene"
@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y build-essential python  && rm -rf /var/
 RUN npm ci --quiet
 COPY ./ ./
 RUN npm run build
-FROM node:12.18.4-buster-slim as app
+FROM node:12.22.12-buster-slim as app
 WORKDIR  /usr/app
 RUN apt-get update && apt-get install -y tini  && rm -rf /var/lib/apt/lists/*
 ENV NODE_ENV=production
