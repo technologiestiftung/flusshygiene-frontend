@@ -25,7 +25,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
       - name: Docker meta base
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.IMAGE_NAME }}
           tags: |
@@ -64,7 +64,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
       - name: Extract metadata (tags, labels) for Docker image
         id: metaghcr
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
